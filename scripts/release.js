@@ -9,7 +9,7 @@ async function updateVersion(updateType) {
 
 const main = async () => {
   const updateType = process.argv[2]
-  const message = process.argv[3]
+  const message = process.argv[3].trim()
 
   const commandHelpMessage = `use o comando da seguinte forma: yarn release [patch| minor| major] [message]`;
 
@@ -29,7 +29,7 @@ const main = async () => {
   await executeProcessInline('git', ['add', '.'], { stdio: 'inherit' });
   await executeProcessInline('git', ['commit', '-m', message], { stdio: 'inherit' });
 
-  await executeProcessInline('git', ['tag', '-a', newVersion, '-m', message], { stdio: 'inherit' });
+  await executeProcessInline('git', ['tag', '-a', newVersion.trim(), '-m', message], { stdio: 'inherit' });
   await executeProcessInline('git', ['status'], { stdio: 'inherit' });
 
 
