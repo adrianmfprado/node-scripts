@@ -1,0 +1,21 @@
+{
+  "name": "projeto-node",
+  "version": "2.2.0",
+  "description": "nosso primeiro projeto node",
+  "main": "index.js",
+  "author": "adrian prado",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "concurrently -p \"[{name}]\" -n \"build-sass, build-ts\" \"yarn build-sass\" \"yarn build-ts\"  ",
+    "build-ts": "./node_modules/node-sass/bin/node-sass -w ./styles/style.scss ./styles/style.css",
+    "build-sass": "./node_modules/node-sass/bin/node-sass -w ./styles/style.scss ./styles/style.css",
+    "release": "node scripts/release.js"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
