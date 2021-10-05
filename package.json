@@ -1,6 +1,6 @@
 {
   "name": "projeto-node",
-  "version": "2.2.5",
+  "version": "5.1.0",
   "description": "nosso primeiro projeto node",
   "main": "index.js",
   "author": "adrian prado",
