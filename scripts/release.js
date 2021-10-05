@@ -35,6 +35,8 @@ const main = async () => {
 
   const releaseBranchName = `release/${newVersion}`;
   await executeProcessInline('git', ['checkout', '-b', releaseBranchName], { stdio: 'inherit' });
+  console.log('criando branch release');
+  process.exit(0);
   await executeProcessInline('git', ['push', 'origin', releaseBranchName], { stdio: 'inherit' });
   
 
