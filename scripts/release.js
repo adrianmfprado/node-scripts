@@ -29,9 +29,6 @@ const main = async () => {
   await executeProcessInline('git', ['add', '.'], { stdio: 'inherit' });
   await executeProcessInline('git', ['commit', '-m', message], { stdio: 'inherit' });
 
-  await executeProcessInline('git', ['tag', '-a', newVersion.trim(), '-m', message], { stdio: 'inherit' });
-  await executeProcessInline('git', ['status'], { stdio: 'inherit' });
-
 
   const releaseBranchName = `release/${newVersion}`.trim();
   await executeProcessInline('git', ['checkout', '-b', releaseBranchName], { stdio: 'inherit' });
